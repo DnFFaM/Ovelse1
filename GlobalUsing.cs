@@ -1,0 +1,1 @@
+﻿global using Ovelse1.Code;

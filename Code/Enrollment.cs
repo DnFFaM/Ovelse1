@@ -6,9 +6,19 @@ using System.Threading.Tasks;
 
 namespace Ovelse1.Code
 {
-     public class Enrollment
+    internal class Enrollment
     {
-        string StudentInfo;
-        string CourseInfo;
+        public Student StudentInfo { get; set; }
+
+        public Person PersonInfo { get; set; }
+
+        public Course CourseInfo { get; set; }
+
+        public Enrollment(Student studentInfo,Person personInfo ,Course courseInfo)
+        {
+            StudentInfo = studentInfo;
+            PersonInfo = personInfo;
+            CourseInfo = courseInfo;
+        }
     }
 }

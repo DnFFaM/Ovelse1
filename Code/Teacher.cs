@@ -10,11 +10,19 @@ namespace Ovelse1.Code
     {
        public int? Department;
 
-        public Lærer( string firstName, string lastName, DateTime dateOfBirth, int? department)
+       public double Age
+       {
+            get;
+            private set;
+       }
+
+        public Lærer(string department) : Person(string firstName, string lastName, DateTime dateOfBirth)
         {
+            Department = department;
             FirstName = firstName;
             LastName = lastName;
-            Department = department;
+            DateOfBirth = dateOfBirth;
+            Age = Logics.CalculateAge(dateOfBirth);
         }
     }
 

@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace Ovelse1.Code
 {
-    internal class Course : Person
+    internal class Course 
     {
-        public string? CourseName;
-        public string? TeacherInfo;
+        public string CourseName { get; set; }
+        public Lærer TeacherInfo { get; set; }
 
-        public Course(string? coursename, string? teacherinfo)
+        public Course(string courseName, Lærer teacherInfo)
         {
-            CourseName = coursename;
-            TeacherInfo = teacherinfo;
+            CourseName = courseName;
+            TeacherInfo = teacherInfo;
         }
+
+
     }
 
 }

@@ -11,12 +11,25 @@ namespace Ovelse1.Code
         public int StudentId { get; set; }
 
 
-        public Student(int studentId) : Person(string? firstName, string? lastName, DateTime dateOfBirth)
+        public Student(int studentId, string firstName, string lastName, DateTime dateOfbirth) : base(firstName, lastName, dateOfbirth)
         {
-            FirstName = firstName;
-            LastName = lastName;
-            DateOfBirth = dateOfBirth;
             StudentId = studentId;
         }
+
+
+        internal override string GetAllCourses(Enrollment meow)
+        {
+            if (meow == null)
+            {
+                return "";
+            }
+            else
+            {
+                return "";
+            }
+        }
+
+ 
+
     }
 }

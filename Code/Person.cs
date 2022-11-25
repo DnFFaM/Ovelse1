@@ -19,8 +19,14 @@ internal abstract class Person
         DateOfBirth = dateOfBirth;
     }
 
-    internal abstract string GetAllCourses(Enrollment meow);
+    public abstract string GetAllCourse(Enrollment enrollment);
 
+    public abstract List<string> GetAllCourse(List<Enrollment> enrollment);
+
+    public virtual string? GetNames()
+    {
+        return $"{FirstName} {LastName}";
+    }
 
 
 

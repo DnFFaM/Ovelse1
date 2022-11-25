@@ -17,7 +17,31 @@ namespace Ovelse1.Code
             TeacherInfo = teacherInfo;
         }
 
+        public List<string> GetStudentsList(List<Enrollment> list)
+        {
+            List<string> _studentsList = new List<string>();
 
+            foreach (var item in list)
+            {
+                if (item.CourseInfo.CourseName == CourseName)
+                {
+                    _studentsList.Add(item.StudentInfo.FirstName);
+                }
+            }
+            return _studentsList;
+        }
+
+        public void CourseStudentAmoutCheck(List<string> _studentList)
+        {
+            if (_studentList.Count < 8)
+            {
+                throw new Exception("Less then 8 Student");
+            }
+            else if (_studentList.Count > 16)
+            {
+                throw new Exception("More then 16 Student");
+            }
+        }
     }
 
 }

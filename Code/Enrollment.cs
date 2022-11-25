@@ -10,21 +10,24 @@ namespace Ovelse1.Code
     {
         public Student StudentInfo { get; set; }
 
-
         public Course CourseInfo { get; set; }
 
-        public Enrollment ListAftilmedt { get; set; }
+        public List<Enrollment> ListAftilmedt { get; set; }
 
         public Enrollment()
         {
 
         }
-
-             
+   
         public Enrollment(Student studentInfo, Course courseInfo)
         {
             StudentInfo = studentInfo;
             CourseInfo = courseInfo;
+        }
+
+        public int CompareTo(Enrollment another)
+        {
+            return this.StudentInfo.LastName.CompareTo(another.StudentInfo.LastName);
         }
     }
 }

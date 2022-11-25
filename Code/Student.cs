@@ -17,19 +17,36 @@ namespace Ovelse1.Code
         }
 
 
-        internal override string GetAllCourses(Enrollment meow)
+        public override string GetAllCourse(Enrollment enrollment)
         {
-            if (meow == null)
+            StringBuilder sb = new();
+            sb.Append($"{FirstName}\n\n");
+            foreach (var item in enrollment.ListAftilmedt)
             {
-                return "";
+                if (item.StudentInfo.StudentId == StudentId)
+                {
+                    sb.Append($"{item.CourseInfo.CourseName}\n");
+                }
             }
-            else
+
+            return sb.ToString();
+        }
+        public override List<string> GetAllCourse(List<Enrollment> enrollment)
+        {
+            List<string> _enrollment = new();
+            foreach (var item in enrollment)
             {
-                return "";
+                if (item.StudentInfo.FirstName == FirstName)
+                {
+                    _enrollment.Add(item.CourseInfo.CourseName.ToString());
+                }
             }
+            return _enrollment;
         }
 
- 
-
+        public override string? GetNames()
+        {
+            return $"{FirstName} {LastName}";
+        }
     }
 }

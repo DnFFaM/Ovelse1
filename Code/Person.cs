@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ovelse1.Code;
 
-internal class Person
+internal abstract class Person
 {
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
@@ -18,4 +18,16 @@ internal class Person
         LastName = lastName;
         DateOfBirth = dateOfBirth;
     }
+
+    public abstract string GetAllCourse(Enrollment enrollment);
+
+    public abstract List<string> GetAllCourse(List<Enrollment> enrollment);
+
+    public virtual string? GetNames()
+    {
+        return $"{FirstName} {LastName}";
+    }
+
+
+
 }
